@@ -6,6 +6,7 @@ import mysql from "mysql";
 import cors from "cors";
 
 const app = express();
+// Allow requests from all origins
 app.use(cors());
 app.use(express.json()); // parse data to json format
 
@@ -15,6 +16,13 @@ app.use(express.json()); // parse data to json format
 //   password: "",
 //   database: "crud",
 // });
+
+// Allow requests only from specific origins
+const corsOptions = {
+  origin: [process.env.ORIGIN],
+};
+
+app.use(cors(corsOptions));
 
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
