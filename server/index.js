@@ -18,11 +18,13 @@ app.use(express.json()); // parse data to json format
 // });
 
 // Allow requests only from specific origins
-const corsOptions = {
-  origin: [process.env.ORIGIN],
-};
+// const corsOptions = {
+//   origin: [process.env.ORIGIN],
+// };
 
-app.use(cors(corsOptions));
+app.use(cors({ origin: "https://student-app-y.vercel.app/" }));
+
+// app.use(cors(corsOptions));
 
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
