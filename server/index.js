@@ -22,7 +22,7 @@ app.use(express.json()); // parse data to json format
 //   origin: [process.env.ORIGIN],
 // };
 
-app.use(cors({ origin: "https://student-app-y.vercel.app/" }));
+app.use(cors({ origin: ["https://student-app-y.vercel.app/"] }));
 
 // app.use(cors(corsOptions));
 
