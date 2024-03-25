@@ -7,7 +7,7 @@ import cors from "cors";
 
 const app = express();
 // Allow requests from all origins
-app.use(cors());
+// app.use(cors());
 app.use(express.json()); // parse data to json format
 
 // const db = mysql.createConnection({
