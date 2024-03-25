@@ -6,6 +6,7 @@ import { Read } from "./Read";
 import Update from "./Update";
 
 function App() {
+  console.log(process.env.REACT_APP_SERVER);
   return (
     <BrowserRouter>
       <Routes>

@@ -7,7 +7,7 @@ export const Read = () => {
   const [student, setStudent] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:8081/read/" + id)
+      .get(process.env.REACT_APP_SERVER + "/read/" + id)
       .then((res) => {
         console.log(res.data);
         setStudent(res.data[0]);

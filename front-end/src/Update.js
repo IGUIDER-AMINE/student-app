@@ -12,7 +12,7 @@ const Update = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8081/read/" + id)
+      .get(process.env.REACT_APP_SERVER + "/read/" + id)
       .then((res) => {
         console.log(res.data);
         setValues({
@@ -27,7 +27,7 @@ const Update = () => {
   const handleUpadate = (e) => {
     e.preventDefault();
     axios
-      .put("http://localhost:8081/update/" + id, values)
+      .put(process.env.REACT_APP_SERVER + "/update/" + id, values)
       .then((res) => {
         console.log(res);
         navigate("/");

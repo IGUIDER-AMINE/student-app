@@ -4,17 +4,16 @@ import { Link } from "react-router-dom";
 
 export const Home = () => {
   const [data, setdata] = useState([]);
-
   useEffect(() => {
     axios
-      .get("http://localhost:8081/")
+      .get(process.env.REACT_APP_SERVER)
       .then((res) => setdata(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:8081/delete/${id}`)
+      .delete(process.env.REACT_APP_SERVER + `/delete/${id}`)
       .then((res) => {
         // reload the user interface
         window.location.reload();

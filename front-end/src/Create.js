@@ -13,7 +13,7 @@ export const Create = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8081/student", values)
+      .post(process.env.REACT_APP_SERVER + "/student", values)
       .then((res) => {
         console.log(res);
         navigate("/");
