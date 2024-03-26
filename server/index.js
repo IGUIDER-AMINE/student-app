@@ -37,7 +37,7 @@ const corsConfig = {
   preflightContinue: false,
 };
 
-pp.use(cors(corsOptions));
+app.use(cors(corsConfig));
 
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
