@@ -26,6 +26,19 @@ app.use(express.json()); // parse data to json format
 
 // app.use(cors(corsOptions));
 
+const corsConfig = {
+  credentials: true, // this allows to send back (to client) cookies
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"],
+  origin: [
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "https://student-app-y.vercel.app",
+  ],
+  preflightContinue: false,
+};
+
+pp.use(cors(corsOptions));
+
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
