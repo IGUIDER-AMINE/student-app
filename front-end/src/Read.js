@@ -10,7 +10,7 @@ export const Read = () => {
       .get(process.env.REACT_APP_SERVER + "/read/" + id)
       .then((res) => {
         console.log(res.data);
-        setStudent(res.data[0]);
+        setStudent(res?.data[0]);
       })
       .catch((err) => console.log(err));
   }, []);

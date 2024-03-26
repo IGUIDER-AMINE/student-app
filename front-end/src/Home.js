@@ -40,7 +40,7 @@ export const Home = () => {
             </tr>
           </thead>
           <tbody>
-            {data.map((student, index) => (
+            {data?.map((student, index) => (
               <tr key={index}>
                 <td>{student.ID}</td>
                 <td>{student.Name}</td>
