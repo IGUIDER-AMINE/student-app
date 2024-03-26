@@ -22,7 +22,7 @@ app.use(express.json()); // parse data to json format
 //   origin: [process.env.ORIGIN],
 // };
 
-app.use(cors({ origin: ["https://student-app-y.vercel.app/"] }));
+// app.use(cors({ origin: ["https://student-app-y.vercel.app/"] }));
 
 // app.use(cors(corsOptions));
 
@@ -33,8 +33,6 @@ const db = mysql.createConnection({
   database: process.env.DB_DATABASE,
   port: process.env.DB_PORT,
 });
-
-console.log(process.env.DB_HOST);
 
 app.get("/", (req, res) => {
   const sql = "SELECT * FROM student";
